@@ -1,4 +1,4 @@
 # PlantCare – Landing Page
 
-Sitio web oficial del proyecto **PlantCare**, desarrollado como parte del ecosistema inteligente de monitoreo y gestión de plantas.  
-La landing page actúa como punto de acceso principal al sistema, mostrando la visión general del proyecto, sus funcionalidades, y los enlaces a las plataformas **web**, **móvil** e **IoT**.
+Official website of the **PlantCare** project, developed as part of the smart ecosystem for plant monitoring and management.  
+The landing page serves as the main access point to the system, showcasing the project’s overview, key features, and links to the **web**, **mobile**, and **IoT** platforms.
