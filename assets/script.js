@@ -187,10 +187,13 @@ const translations = {
     },
     about: {
       title: 'About Us',
-      missionTitle: 'Our Mission',
-      missionText: 'We at PlantCare believe in sustainable living. We want to empower everyone to grow and care for plants effectively by leveraging cutting-edge technology that\'s easy to use and fun for the whole family!',
-      storyTitle: 'Our Story',
-      storyText: 'We started when we realized how hard it was for busy people to keep their plants alive. Our team of garden enthusiasts and tech experts came together to create a smarter way to care for your green friends, making plant care accessible to everyone.'
+      teamTitle: 'About the Team',
+      teamText1: 'At PlantCare, we believe in sustainable living. We want to help everyone care for their plants effectively by leveraging cutting-edge technology that\'s easy to use and fun for the whole family!',
+      teamText2: 'We started when we realized how difficult it was for busy people to keep their plants alive. Our team came together to create a smarter way to care for their eco-friendly friends, making plant care more accessible.',
+      productTitle: 'About the Product',
+      productText1: 'PlantCare is more than a smart monitoring system: it\'s a comprehensive ecosystem designed to make plant care effortless and enjoyable. Our product combines advanced sensors, smart algorithms, and easy-to-use interfaces to provide insight into the health and needs of your plants.',
+      meetTeamTitle: 'Meet Our Team',
+      seeProductTitle: 'See Our Product in Action'
     },
     services: {
       title: 'Services',
@@ -308,7 +311,7 @@ const translations = {
     footer: {
       description: 'Making plant care effortless through smart technology and dedicated support for plant lovers everywhere.',
       product: 'Product',
-      productLinks: ['About', 'Features', 'Pricing', 'Downloads'],
+      productLinks: ['About', 'Pricing', 'Downloads'],
       support: 'Support',
       supportLinks: ['Help Center', 'Contact', 'Live Chat', 'FAQ'],
       legal: 'Legal',
@@ -334,10 +337,13 @@ const translations = {
     },
     about: {
       title: 'Acerca de Nosotros',
-      missionTitle: 'Nuestra Misión',
-      missionText: 'En PlantCare creemos en la vida sostenible. Queremos empoderar a todos para que cultiven y cuiden las plantas de manera efectiva aprovechando tecnología de vanguardia que es fácil de usar y divertida para toda la familia.',
-      storyTitle: 'Nuestra Historia',
-      storyText: 'Comenzamos cuando nos dimos cuenta de lo difícil que era para las personas ocupadas mantener vivas sus plantas. Nuestro equipo de entusiastas de la jardinería y expertos en tecnología se unieron para crear una forma más inteligente de cuidar a tus amigos verdes, haciendo el cuidado de las plantas accesible para todos.'
+      teamTitle: 'Acerca del Equipo',
+      teamText1: 'En PlantCare creemos en la vida sostenible. Queremos ayudar a todos a cuidar sus plantas de manera efectiva aprovechando tecnología de vanguardia que es fácil de usar y divertida para toda la familia.',
+      teamText2: 'Comenzamos cuando nos dimos cuenta de lo difícil que era para las personas ocupadas mantener vivas sus plantas. Nuestro equipo se unió para crear una forma más inteligente de cuidar a sus amigos ecológicos, haciendo el cuidado de las plantas más accesible.',
+      productTitle: 'Acerca del Producto',
+      productText1: 'PlantCare es más que un sistema de monitoreo inteligente: es un ecosistema integral diseñado para hacer el cuidado de plantas sin esfuerzo y agradable. Nuestro producto combina sensores avanzados, algoritmos inteligentes e interfaces fáciles de usar para proporcionar información sobre la salud y necesidades de tus plantas.',
+      meetTeamTitle: 'Conoce a Nuestro Equipo',
+      seeProductTitle: 'Ve Nuestro Producto en Acción'
     },
     services: {
       title: 'Servicios',
@@ -455,7 +461,7 @@ const translations = {
     footer: {
       description: 'Haciendo el cuidado de plantas sin esfuerzo a través de tecnología inteligente y soporte dedicado para amantes de plantas en todas partes.',
       product: 'Producto',
-      productLinks: ['Acerca de', 'Características', 'Precios', 'Descargas'],
+      productLinks: ['Acerca de', 'Precios', 'Descargas'],
       support: 'Soporte',
       supportLinks: ['Centro de Ayuda', 'Contacto', 'Chat en Vivo', 'FAQ'],
       legal: 'Legal',
@@ -506,13 +512,29 @@ function updateLanguage() {
   const aboutTitle = document.querySelector('#about .section-title');
   if (aboutTitle) aboutTitle.textContent = t.about.title;
   
-  const aboutSubtitles = document.querySelectorAll('.about-subtitle');
-  if (aboutSubtitles[0]) aboutSubtitles[0].textContent = t.about.missionTitle;
-  if (aboutSubtitles[1]) aboutSubtitles[1].textContent = t.about.storyTitle;
+  // Update About the Team section
+  const teamTitle = document.querySelector('.about-section-title');
+  if (teamTitle) teamTitle.textContent = t.about.teamTitle;
   
-  const aboutTexts = document.querySelectorAll('.about-text');
-  if (aboutTexts[0]) aboutTexts[0].textContent = t.about.missionText;
-  if (aboutTexts[1]) aboutTexts[1].textContent = t.about.storyText;
+  const teamTexts = document.querySelectorAll('.about-text');
+  if (teamTexts[0]) teamTexts[0].textContent = t.about.teamText1;
+  if (teamTexts[1]) teamTexts[1].textContent = t.about.teamText2;
+  
+  // Update About the Product section
+  const productTitles = document.querySelectorAll('.about-section-title');
+  if (productTitles[1]) productTitles[1].textContent = t.about.productTitle;
+  
+  // Update About the Product text (only one paragraph now)
+  const aboutSections = document.querySelectorAll('.about-section');
+  if (aboutSections[1]) {
+    const productText = aboutSections[1].querySelector('.about-text');
+    if (productText) productText.textContent = t.about.productText1;
+  }
+  
+  // Update video titles
+  const videoTitles = document.querySelectorAll('.video-title');
+  if (videoTitles[0]) videoTitles[0].textContent = t.about.meetTeamTitle;
+  if (videoTitles[1]) videoTitles[1].textContent = t.about.seeProductTitle;
   
   // Update Services section
   const servicesTitle = document.querySelector('.services .section-title');
