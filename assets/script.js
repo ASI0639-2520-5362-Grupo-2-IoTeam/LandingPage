@@ -171,7 +171,7 @@ let currentLanguage = 'en';
 const translations = {
   en: {
     nav: {
-      about: 'About',
+      about: 'About the Product',
       howItWorks: 'How it Works',
       benefits: 'Benefits',
       pricing: 'Pricing',
@@ -189,7 +189,6 @@ const translations = {
       title: 'About Us',
       teamTitle: 'About the Team',
       teamText1: 'At PlantCare, we believe in sustainable living. We want to help everyone care for their plants effectively by leveraging cutting-edge technology that\'s easy to use and fun for the whole family!',
-      teamText2: 'We started when we realized how difficult it was for busy people to keep their plants alive. Our team came together to create a smarter way to care for their eco-friendly friends, making plant care more accessible.',
       productTitle: 'About the Product',
       productText1: 'PlantCare is more than a smart monitoring system: it\'s a comprehensive ecosystem designed to make plant care effortless and enjoyable. Our product combines advanced sensors, smart algorithms, and easy-to-use interfaces to provide insight into the health and needs of your plants.',
       meetTeamTitle: 'Meet Our Team',
@@ -321,7 +320,7 @@ const translations = {
   },
   es: {
     nav: {
-      about: 'Acerca de',
+      about: 'Acerca del Producto',
       howItWorks: 'Cómo Funciona',
       benefits: 'Beneficios',
       pricing: 'Precios',
