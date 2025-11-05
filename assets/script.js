@@ -176,23 +176,25 @@ const translations = {
       benefits: 'Benefits',
       pricing: 'Pricing',
       testimonials: 'Testimonials',
-      getStarted: 'Get Started',
+      getStarted: 'Open Web App',
       languageButton: 'EN'
     },
     hero: {
       title: 'Take care of your plants<br />effortlessly',
       text: 'PlantCare makes it easy to water and feed your plants using<br class="desktop-break" />smart technology for healthier, happier plants.',
-      getStarted: 'Get Started',
-      learnMore: 'Learn More'
+      getStarted: 'Open Web App',
+      downloadIos: 'Download for iOS',
+      downloadAndroid: 'Download for Android'
     },
     about: {
-      title: 'About Us',
+      title: 'About the Product',
       teamTitle: 'About the Team',
       teamText1: 'At PlantCare, we believe in sustainable living. We want to help everyone care for their plants effectively by leveraging cutting-edge technology that\'s easy to use and fun for the whole family!',
+      teamText2: 'PlantCare adapts to your lifestyle and the needs of your plants. We believe that technology should enhance our connection with nature, not replace it; that\'s why every feature is designed to help you take better care of your plants.',
       productTitle: 'About the Product',
-      productText1: 'PlantCare is more than a smart monitoring system: it\'s a comprehensive ecosystem designed to make plant care effortless and enjoyable. Our product combines advanced sensors, smart algorithms, and easy-to-use interfaces to provide insight into the health and needs of your plants.',
-      meetTeamTitle: 'Meet Our Team',
-      seeProductTitle: 'See Our Product in Action'
+      productText1: 'At PlantCare, we believe in sustainable living. We want to help everyone care for their plants effectively by leveraging cutting-edge technology that\'s easy to use and fun for the whole family!',
+      meetTeamTitle: 'See Our Product in Action',
+      seeProductTitle: 'Meet Our Team'
     },
     services: {
       title: 'Services',
@@ -325,24 +327,25 @@ const translations = {
       benefits: 'Beneficios',
       pricing: 'Precios',
       testimonials: 'Testimonios',
-      getStarted: 'Comenzar',
+      getStarted: 'Abrir App Web',
       languageButton: 'ES'
     },
     hero: {
       title: 'Cuida tus plantas<br />fácilmente',
       text: 'PlantCare facilita el riego y alimentación de tus plantas usando<br class="desktop-break" />tecnología inteligente para plantas más saludables y felices.',
-      getStarted: 'Comenzar',
-      learnMore: 'Saber Más'
+      getStarted: 'Abrir App Web',
+      downloadIos: 'Descargar para iOS',
+      downloadAndroid: 'Descargar para Android'
     },
     about: {
-      title: 'Acerca de Nosotros',
+      title: 'Acerca del Producto',
       teamTitle: 'Acerca del Equipo',
-      teamText1: 'En PlantCare creemos en la vida sostenible. Queremos ayudar a todos a cuidar sus plantas de manera efectiva aprovechando tecnología de vanguardia que es fácil de usar y divertida para toda la familia.',
-      teamText2: 'Comenzamos cuando nos dimos cuenta de lo difícil que era para las personas ocupadas mantener vivas sus plantas. Nuestro equipo se unió para crear una forma más inteligente de cuidar a sus amigos ecológicos, haciendo el cuidado de las plantas más accesible.',
+      teamText1: 'PlantCare es más que un sistema de monitoreo inteligente: es un ecosistema completo diseñado para que el cuidado de las plantas sea fácil y placentero. Nuestro producto combina sensores avanzados, algoritmos inteligentes e interfaces fáciles de usar para brindar información sobre la salud y las necesidades de tus plantas.',
+      teamText2: 'PlantCare se adapta a tu estilo de vida y a las necesidades de tus plantas. Creemos que la tecnología debe potenciar nuestra conexión con la naturaleza, no reemplazarla; por eso, cada función está diseñada para ayudarte a cuidar mejor de tus plantas.',
       productTitle: 'Acerca del Producto',
-      productText1: 'PlantCare es más que un sistema de monitoreo inteligente: es un ecosistema integral diseñado para hacer el cuidado de plantas sin esfuerzo y agradable. Nuestro producto combina sensores avanzados, algoritmos inteligentes e interfaces fáciles de usar para proporcionar información sobre la salud y necesidades de tus plantas.',
-      meetTeamTitle: 'Conoce a Nuestro Equipo',
-      seeProductTitle: 'Ve Nuestro Producto en Acción'
+      productText1: 'En PlantCare, creemos en la vida sostenible. Queremos ayudar a todos a cuidar sus plantas de manera efectiva aprovechando tecnología de vanguardia que es fácil de usar y divertida para toda la familia.',
+      meetTeamTitle: 'Ve Nuestro Producto en Acción',
+      seeProductTitle: 'Conoce a Nuestro Equipo'
     },
     services: {
       title: 'Servicios',
@@ -505,7 +508,8 @@ function updateLanguage() {
   // Update hero buttons
   const heroButtons = document.querySelectorAll('.hero-buttons .btn');
   if (heroButtons[0]) heroButtons[0].textContent = t.hero.getStarted;
-  if (heroButtons[1]) heroButtons[1].textContent = t.hero.learnMore;
+  if (heroButtons[1]) heroButtons[1].textContent = t.hero.downloadIos;
+  if (heroButtons[2]) heroButtons[2].textContent = t.hero.downloadAndroid;
   
   // Update About section
   const aboutTitle = document.querySelector('#about .section-title');
