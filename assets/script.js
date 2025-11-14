@@ -176,15 +176,14 @@ const translations = {
       benefits: 'Benefits',
       pricing: 'Pricing',
       testimonials: 'Testimonials',
-      getStarted: 'Open Web App',
+        getStarted: 'Try our web app',
       languageButton: 'EN'
     },
     hero: {
       title: 'Take care of your plants<br />effortlessly',
       text: 'PlantCare makes it easy to water and feed your plants using<br class="desktop-break" />smart technology for healthier, happier plants.',
-      getStarted: 'Open Web App',
-      downloadIos: 'Download for iOS',
-      downloadAndroid: 'Download for Android'
+        getStarted: 'Try our web app',
+      downloadApp: 'Try our mobile app'
     },
     about: {
       title: 'About the Product',
@@ -327,15 +326,14 @@ const translations = {
       benefits: 'Beneficios',
       pricing: 'Precios',
       testimonials: 'Testimonios',
-      getStarted: 'Abrir App Web',
+        getStarted: 'Prueba nuestra app',
       languageButton: 'ES'
     },
     hero: {
       title: 'Cuida tus plantas<br />fácilmente',
       text: 'PlantCare facilita el riego y alimentación de tus plantas usando<br class="desktop-break" />tecnología inteligente para plantas más saludables y felices.',
-      getStarted: 'Abrir App Web',
-      downloadIos: 'Descargar para iOS',
-      downloadAndroid: 'Descargar para Android'
+        getStarted: 'Prueba nuestra app',
+      downloadApp: 'Prueba nuestra app móvil'
     },
     about: {
       title: 'Acerca del Producto',
@@ -492,24 +490,46 @@ function updateLanguage() {
   });
   
   // Update buttons
-  document.querySelectorAll('.btn-primary').forEach(btn => {
-    if (btn.textContent.trim() === 'Get Started' || btn.textContent.trim() === 'Comenzar') {
-      btn.textContent = t.nav.getStarted;
-    }
-    if (btn.textContent.trim() === 'Subscribe' || btn.textContent.trim() === 'Suscribirse') {
-      btn.textContent = t.newsletter.subscribe;
-    }
-  });
+    // Ensure nav CTAs update the label (preserve badge)
+    document.querySelectorAll('.nav-cta').forEach(el => {
+      const label = el.querySelector('.cta-label');
+      if (label) {
+        label.textContent = t.nav.getStarted;
+      } else {
+        el.textContent = t.nav.getStarted;
+      }
+      el.setAttribute('href', 'https://frontendweb-1raj.onrender.com/');
+    });
+    // Update other primary buttons that match newsletter/subscribe
+    document.querySelectorAll('.btn-primary').forEach(btn => {
+      const txt = btn.textContent.trim();
+      if (txt === 'Subscribe' || txt === 'Suscribirse') {
+        btn.textContent = t.newsletter.subscribe;
+      }
+    });
   
   // Update hero section
   document.querySelector('.hero-title').innerHTML = t.hero.title;
   document.querySelector('.hero-text').innerHTML = t.hero.text;
   
   // Update hero buttons
-  const heroButtons = document.querySelectorAll('.hero-buttons .btn');
-  if (heroButtons[0]) heroButtons[0].textContent = t.hero.getStarted;
-  if (heroButtons[1]) heroButtons[1].textContent = t.hero.downloadIos;
-  if (heroButtons[2]) heroButtons[2].textContent = t.hero.downloadAndroid;
+    // Update hero buttons (primary web app CTA + single download button)
+    const heroCta = document.querySelector('.hero-cta');
+    const downloadBtn = document.querySelector('.download-btn');
+    const webAppUrl = 'https://frontendweb-1raj.onrender.com/';
+    const apkUrl = 'https://github.com/ASI0639-2520-5362-Grupo-2-IoTeam/FrontendMobile/releases/download/v1.0.0/app-release.apk';
+    if (heroCta) {
+      const hLabel = heroCta.querySelector('.cta-label');
+      if (hLabel) hLabel.textContent = t.hero.getStarted;
+      else heroCta.textContent = t.hero.getStarted;
+      heroCta.setAttribute('href', webAppUrl);
+    }
+    if (downloadBtn) {
+      const dLabel = downloadBtn.querySelector('.cta-label');
+      if (dLabel) dLabel.textContent = t.hero.downloadApp;
+      else downloadBtn.textContent = t.hero.downloadApp;
+      downloadBtn.setAttribute('href', apkUrl);
+    }
   
   // Update About section
   const aboutTitle = document.querySelector('#about .section-title');
@@ -723,4 +743,6 @@ document.addEventListener('DOMContentLoaded', () => {
     currentLanguage = savedLanguage;
     updateLanguage();
   }
+  // Ensure UI reflects the current language on initial load
+  updateLanguage();
 });
